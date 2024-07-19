@@ -102,7 +102,7 @@ button:hover {
 }
 
 :root {
-    --primary-color: rgba(83, 200, 220);
+    --primary-color: #2CB8C3;
     --secondary-color: rgb(255, 79, 40);
     --third-color: rgb(255, 255, 255);
 }
@@ -172,20 +172,20 @@ button {
     margin: 10px;
 }
 
-button:hover,
 button.active {
     background-color: rgb(197, 46, 12);
     cursor: pointer;
     transition: .5s;
 }
 
-.images {
+.images{
+    margin-bottom: 3%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.imgStatic, .imgMoving {
+.imgStatic{
     max-width: 100%;
     height: auto;
     display: block;
@@ -194,7 +194,7 @@ button.active {
 .imgStatic {
     position: absolute;
     z-index: 1;
-    margin-top: 5%;
+    margin-top: 3%;
 }
 
 

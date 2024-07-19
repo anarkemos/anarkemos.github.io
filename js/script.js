@@ -65,10 +65,10 @@ function cuentaRegresiva(tiempoFaltante) {
     }, 1000);
 };
 
-cuentaRegresiva('JUL 18 2024 22:49:00 GMT-0500');
+cuentaRegresiva('JUL 19 2024 10:47:00 GMT-0500');
 // funcion para cambiar la imagen del papa noel(utilizada cuando el temporizador llega a 0)
 function santaBailando() {
-    imgStatic.src = "../img/papaNoel.gif";
+    imgStatic.src = "../img/074f7fe522bce5ab670ad920357a19b1.gif";
 }
 
 // función para que la musica suene cuando se clickeen el boton play y se pause cuando se clickee el boton pause. tambien para que al hacer click suene el clicksound
