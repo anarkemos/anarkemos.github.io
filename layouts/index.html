@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navidad Timer</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+    <div class="contenedorTimer">
+        <div class="mensaje" id="mensaje">Falta para navidad:</div>
+        <div class="reloj">
+            <ul class="numbers">
+                <li id="dias"></li>
+                <li id="horas"></li>
+                <li id="minutos"></li>
+                <li id="segundos"></li>
+            </ul>
+            <ul>
+                <li>D</li>
+                <li>H</li>
+                <li>M</li>
+                <li>S</li>
+            </ul>
+        </div>
+        <div class="messages">
+            <button id="play">Play</button>
+            <button id="pause">Pause</button>
+        </div>
+    </div>
+    <div class="images">
+        <img id="santaStatic" class="imgStatic" src="../img/papaNoel.png" alt="papa_noel_estático">
+    </div>
+    <audio id="cancion" src="../audio/allWant.mp3"></audio>
+    <audio id="clickSound" src="../audio/botonbailar.mp3"></audio>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

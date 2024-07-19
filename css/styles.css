@@ -1,0 +1,200 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+:root {
+    --primary-color: rgba(83, 200, 220);
+    --secondary-color: rgb(255, 79, 40);
+    --third-color: rgb(255, 255, 255);
+}
+
+body {
+    background-color: var(--primary-color);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+    width: 100%;
+}
+
+.contenedorTimer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.mensaje {
+    font-size: 45px;
+    color: var(--secondary-color);
+}
+
+.reloj ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    color: var(--third-color);
+    font-size: 30px;
+    justify-content: space-around;
+}
+
+.numbers {
+    display: flex;
+    justify-content: center;
+}
+
+#dias,
+#horas,
+#minutos,
+#segundos {
+    border: 1px solid var(--third-color);
+    padding: 15px;
+    width: 90px;
+    height: 60px;
+    border-radius: 25px;
+    box-shadow: inset 0px 0px 3px 3px var(--third-color);
+}
+
+.reloj ul li {
+    display: flex;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    width: 130px;
+    height: 40px;
+    background-color: var(--secondary-color);
+    color: var(--third-color);
+    font-size: 25px;
+    border-radius: 50px;
+    border: none;
+    margin: 10px;
+}
+
+button:hover {
+    background-color: rgb(197, 46, 12);
+    cursor: pointer;
+    transition: .5s;
+}
+
+.imgStatic {
+    position: absolute;
+    z-index: 1;
+    margin-top: 5%;
+}
+
+.imgMoving {
+    position: absolute;
+    z-index: -1;
+    margin-top: 5%;
+} */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+:root {
+    --primary-color: rgba(83, 200, 220);
+    --secondary-color: rgb(255, 79, 40);
+    --third-color: rgb(255, 255, 255);
+}
+
+body {
+    background-color: var(--primary-color);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+    width: 100%;
+}
+
+.contenedorTimer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.mensaje {
+    font-size: 45px;
+    color: var(--secondary-color);
+}
+
+.reloj ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    color: var(--third-color);
+    font-size: 30px;
+    justify-content: space-around;
+}
+
+.numbers {
+    display: flex;
+    justify-content: center;
+}
+
+#dias,
+#horas,
+#minutos,
+#segundos {
+    border: 1px solid var(--third-color);
+    padding: 15px;
+    width: 90px;
+    height: 60px;
+    border-radius: 25px;
+    box-shadow: inset 0px 0px 3px 3px var(--third-color);
+}
+
+.reloj ul li {
+    display: flex;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    width: 130px;
+    height: 40px;
+    background-color: var(--secondary-color);
+    color: var(--third-color);
+    font-size: 25px;
+    border-radius: 50px;
+    border: none;
+    margin: 10px;
+}
+
+button:hover,
+button.active {
+    background-color: rgb(197, 46, 12);
+    cursor: pointer;
+    transition: .5s;
+}
+
+.images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgStatic, .imgMoving {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.imgStatic {
+    position: absolute;
+    z-index: 1;
+    margin-top: 5%;
+}
+
+
