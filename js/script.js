@@ -1,8 +1,7 @@
-//  variables inicializadas para ser utilizadas en funciones
 
-let cancion = document.getElementById('cancion')
-let clickSound = document.getElementById('clickSound')
-let imgStatic = document.getElementById('santaStatic')
+let cancion = document.getElementById('cancion');
+let clickSound = document.getElementById('clickSound');
+let imgStatic = document.getElementById('santaStatic');
 
 /*!- función para obtener el tiempo fltante para navidad de 2024(25/12/2024)*/
 function obtenerTiempoFaltante(fechaLimite) {
@@ -22,75 +21,66 @@ function obtenerTiempoFaltante(fechaLimite) {
     };
 }
 
-// console.log (obtenerTiempoFaltante('DEC 25 8999 00:00:00 GMT-0500'));
-
 // funcion para mostrar el tiempo faltante en el html
-
-
-function cuentaRegresiva(tiempoFaltante) {
+function cuentaRegresiva(fechaLimite) {
     const dias = document.getElementById('dias');
     const horas = document.getElementById('horas');
     const minutos = document.getElementById('minutos');
     const segundos = document.getElementById('segundos');
     const mensajito = document.getElementById('mensaje');
-    const mensaje = ('¡Feliz Navidad!')
+    const mensaje = '¡Feliz Navidad!';
+    
     const tiempoActual = setInterval(() => {
-        let t = obtenerTiempoFaltante(tiempoFaltante);
-        dias.innerHTML = `${t.diasFaltantes}`;
-        horas.innerHTML = `${t.horasFaltantes}`;
-        minutos.innerHTML = `${t.minutosFaltantes}`;
-        segundos.innerHTML = `${t.segundosFaltantes}`;
-
-
-// condicinal de if para activar los botones y que estos puedan poner o parar la musica utilizando la funcion activarBotones. tambien para cambiar img por gif y por ultimo para dejar el temporizador en ceros y que no siga contando hacia atrás
-
-        if (t.tiempoFaltante <=0) {
+        let t = obtenerTiempoFaltante(fechaLimite);
+        
+        if (t.tiempoFaltante <= 0) {
             clearInterval(tiempoActual);
             mensajito.innerHTML = mensaje;
             santaBailando();
             activarBotones();
-            t={
-                segundosFaltantes:'00',
-                minutosFaltantes:'00',
-                horasFaltantes:'00',
-                diasFaltantes:'00',
+            t = {
+                segundosFaltantes: '00',
+                minutosFaltantes: '00',
+                horasFaltantes: '00',
+                diasFaltantes: '00',
                 tiempoFaltante: 0
             };
         }
+
         dias.innerHTML = `${t.diasFaltantes}`;
         horas.innerHTML = `${t.horasFaltantes}`;
         minutos.innerHTML = `${t.minutosFaltantes}`;
         segundos.innerHTML = `${t.segundosFaltantes}`;
-
     }, 1000);
-};
+}
 
-cuentaRegresiva('JUL 19 2024 10:47:00 GMT-0500');
-// funcion para cambiar la imagen del papa noel(utilizada cuando el temporizador llega a 0)
+cuentaRegresiva('JUL 19 2024 14:00Z:00 GMT-0500');
+
 function santaBailando() {
-    imgStatic.src = "../img/074f7fe522bce5ab670ad920357a19b1.gif";
+    imgStatic.src = "../img/papaNoel.gif";
 }
 
 // función para que la musica suene cuando se clickeen el boton play y se pause cuando se clickee el boton pause. tambien para que al hacer click suene el clicksound
-
-// además tiene la funcionalidad de dejar el hover de los botones activos una vez son clickeados y devolverlos a su estado original si el otro el clickeado
 function activarBotones() {
     const playButton = document.getElementById('play');
     const pauseButton = document.getElementById('pause');
 
     playButton.addEventListener('click', () => {
-        clickSound.play();
-        cancion.play();
-        playButton.classList.add('active');
-        pauseButton.classList.remove('active');
+        if (!playButton.classList.contains('selected')) {
+            clickSound.play();
+            cancion.play();
+            playButton.classList.add('selected');
+            pauseButton.classList.remove('selected');
+        }
     });
 
     pauseButton.addEventListener('click', () => {
-        clickSound.play();
-        cancion.pause();
-        pauseButton.classList.add('active');
-        playButton.classList.remove('active');
+        if (!pauseButton.classList.contains('selected')) {
+            clickSound.play();
+            cancion.pause();
+            pauseButton.classList.add('selected');
+            playButton.classList.remove('selected');
+        }
     });
 }
-
 
