@@ -54,7 +54,7 @@ function cuentaRegresiva(fechaLimite) {
     }, 1000);
 }
 
-cuentaRegresiva('JUL 19 2024 14:00Z:00 GMT-0500');
+cuentaRegresiva('DEC 25 2024 14:00:00 GMT-0500');
 
 function santaBailando() {
     imgStatic.src = "../img/papaNoel.gif";
